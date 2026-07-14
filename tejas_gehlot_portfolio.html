@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TEJAS GEHLOT</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#ffffff;
+--bg2:#f5f5f3;
+--text:#0a0a0a;
+--text2:#555550;
+--text3:#999990;
+--border:#e0e0da;
+--accent:#0a0a0a;
+--toggle-bg:#0a0a0a;
+--toggle-fg:#ffffff;
+--card-bg:#f5f5f3;
+}
+[data-theme="dark"]{
+--bg:#0a0a0a;
+--bg2:#141414;
+--text:#f0f0ec;
+--text2:#aaaaaa;
+--text3:#666660;
+--border:#2a2a2a;
+--accent:#f0f0ec;
+--toggle-bg:#f0f0ec;
+--toggle-fg:#0a0a0a;
+--card-bg:#141414;
+}
+html{scroll-behavior:smooth}
+body{
+background:var(--bg);
+color:var(--text);
+font-family:'Space Grotesk',sans-serif;
+font-size:16px;
+line-height:1.6;
+transition:background 0.3s ease,color 0.3s ease;
+min-height:100vh;
+}
+a{color:var(--text);text-decoration:none}
+nav{
+position:fixed;top:0;left:0;right:0;
+display:flex;align-items:center;justify-content:space-between;
+padding:1.2rem 3rem;
+border-bottom:1px solid var(--border);
+background:var(--bg);
+z-index:100;
+transition:background 0.3s;
+}
+.nav-logo{
+font-family:'Space Mono',monospace;
+font-size:0.85rem;
+letter-spacing:0.15em;
+text-transform:uppercase;
+font-weight:700;
+}
+.nav-center{
+position:absolute;left:50%;transform:translateX(-50%);
+}
+.toggle-btn{
+background:var(--toggle-bg);
+color:var(--toggle-fg);
+border:none;
+width:44px;height:24px;
+border-radius:12px;
+cursor:pointer;
+position:relative;
+transition:background 0.3s;
+display:flex;align-items:center;
+}
+.toggle-btn::after{
+content:'';
+position:absolute;
+width:18px;height:18px;
+border-radius:50%;
+background:var(--toggle-fg);
+left:3px;
+transition:transform 0.3s,background 0.3s;
+}
+[data-theme="dark"] .toggle-btn::after{transform:translateX(20px);}
+.nav-links{
+display:flex;gap:2rem;
+font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;
+}
+.nav-links a{color:var(--text2);transition:color 0.2s;}
+.nav-links a:hover{color:var(--text);}
+
+main{padding-top:80px;}
+
+section.hero{
+min-height:calc(100vh - 80px);
+display:flex;flex-direction:column;justify-content:flex-end;
+padding:4rem 3rem;
+border-bottom:1px solid var(--border);
+position:relative;
+}
+.hero-eyebrow{
+font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;
+color:var(--text3);margin-bottom:1.5rem;
+font-family:'Space Mono',monospace;
+}
+.hero-name{
+font-size:clamp(3.5rem,10vw,9rem);
+font-weight:700;
+letter-spacing:-0.03em;
+line-height:0.9;
+margin-bottom:2.5rem;
+}
+.hero-name span{display:block;}
+.hero-sub{
+display:flex;align-items:flex-end;justify-content:space-between;
+flex-wrap:wrap;gap:1rem;
+}
+.hero-desc{
+max-width:480px;
+font-size:0.95rem;
+color:var(--text2);
+line-height:1.7;
+}
+.hero-status{
+font-family:'Space Mono',monospace;
+font-size:0.72rem;
+letter-spacing:0.1em;
+color:var(--text3);
+text-align:right;
+}
+.hero-status .dot{
+display:inline-block;
+width:7px;height:7px;
+border-radius:50%;
+background:#22c55e;
+margin-right:6px;
+animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+section.work{padding:5rem 3rem;border-bottom:1px solid var(--border);}
+.section-header{
+display:flex;align-items:baseline;justify-content:space-between;
+margin-bottom:3rem;border-bottom:1px solid var(--border);padding-bottom:1rem;
+}
+.section-label{
+font-family:'Space Mono',monospace;
+font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text3);
+}
+.section-count{
+font-family:'Space Mono',monospace;
+font-size:0.72rem;color:var(--text3);
+}
+.projects-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;
+border:1px solid var(--border);
+}
+.project-card{
+background:var(--card-bg);
+padding:2rem;
+cursor:pointer;
+transition:background 0.2s;
+border:none;
+position:relative;
+overflow:hidden;
+}
+.project-card:hover{background:var(--bg);}
+.project-card:hover .project-thumb{transform:scale(1.03);}
+.project-thumb{
+width:100%;
+aspect-ratio:16/9;
+background:var(--border);
+border-radius:2px;
+margin-bottom:1.5rem;
+overflow:hidden;
+transition:transform 0.4s ease;
+display:flex;align-items:center;justify-content:center;
+position:relative;
+}
+.thumb-placeholder{
+width:100%;height:100%;
+display:flex;align-items:center;justify-content:center;
+font-family:'Space Mono',monospace;
+font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;
+color:var(--text3);
+flex-direction:column;gap:0.5rem;
+}
+.thumb-lines{display:flex;flex-direction:column;gap:6px;width:50%;margin-bottom:8px;}
+.thumb-line{height:2px;background:var(--border);border-radius:1px;}
+.thumb-line:nth-child(1){width:100%;}
+.thumb-line:nth-child(2){width:70%;}
+.thumb-line:nth-child(3){width:85%;}
+.project-tags{
+display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.8rem;
+}
+.tag{
+font-family:'Space Mono',monospace;
+font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
+border:1px solid var(--border);
+padding:3px 8px;border-radius:2px;
+color:var(--text3);
+}
+.project-title{font-size:1.15rem;font-weight:600;margin-bottom:0.5rem;}
+.project-desc{font-size:0.85rem;color:var(--text2);line-height:1.6;margin-bottom:1rem;}
+.project-link{
+font-family:'Space Mono',monospace;
+font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;
+color:var(--text);
+display:inline-flex;align-items:center;gap:0.4rem;
+border-bottom:1px solid var(--border);
+padding-bottom:2px;
+transition:border-color 0.2s;
+}
+.project-link:hover{border-color:var(--text);}
+.project-link::after{content:'↗';font-size:0.8rem;}
+
+section.skills-section{padding:5rem 3rem;border-bottom:1px solid var(--border);}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;}
+.skill-group{}
+.skill-group-title{
+font-family:'Space Mono',monospace;
+font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;
+color:var(--text3);margin-bottom:1rem;
+border-bottom:1px solid var(--border);padding-bottom:0.5rem;
+}
+.skill-items{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.skill-item{
+font-size:0.82rem;
+color:var(--text2);
+padding:4px 10px;
+background:var(--card-bg);
+border-radius:2px;
+}
+
+section.about-section{
+padding:5rem 3rem;border-bottom:1px solid var(--border);
+display:grid;grid-template-columns:1fr 1fr;gap:4rem;
+}
+.about-left{}
+.about-title{font-size:2.5rem;font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:2rem;}
+.about-body{font-size:0.95rem;color:var(--text2);line-height:1.8;}
+.edu-block{margin-top:2rem;}
+.edu-item{
+padding:1.2rem 0;
+border-top:1px solid var(--border);
+display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;
+}
+.edu-name{font-weight:600;font-size:0.9rem;margin-bottom:0.2rem;}
+.edu-detail{font-size:0.82rem;color:var(--text2);}
+.edu-year{
+font-family:'Space Mono',monospace;
+font-size:0.72rem;color:var(--text3);
+white-space:nowrap;
+}
+.about-right{}
+.achievements-list{margin-top:0.5rem;}
+.achievement-item{
+padding:1.2rem 0;
+border-top:1px solid var(--border);
+font-size:0.88rem;
+color:var(--text2);
+display:flex;gap:1rem;align-items:flex-start;
+}
+.ach-num{
+font-family:'Space Mono',monospace;
+font-size:0.7rem;color:var(--text3);
+min-width:24px;
+}
+
+section.contact-section{padding:5rem 3rem;}
+.contact-top{
+display:flex;align-items:flex-end;justify-content:space-between;
+margin-bottom:3rem;flex-wrap:wrap;gap:2rem;
+}
+.contact-heading{font-size:clamp(2rem,6vw,5rem);font-weight:700;letter-spacing:-0.03em;line-height:1;}
+.contact-links{
+display:flex;flex-direction:column;gap:0.8rem;align-items:flex-end;
+}
+.contact-link{
+font-family:'Space Mono',monospace;
+font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;
+color:var(--text2);
+display:flex;align-items:center;gap:0.5rem;
+transition:color 0.2s;
+}
+.contact-link:hover{color:var(--text);}
+.contact-link::after{content:'↗';}
+.contact-email{
+font-size:1rem;color:var(--text);
+border-bottom:1px solid var(--border);padding-bottom:3rem;margin-bottom:2rem;
+}
+footer{
+display:flex;justify-content:space-between;align-items:center;
+font-family:'Space Mono',monospace;
+font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;
+color:var(--text3);
+padding-top:1.5rem;
+border-top:1px solid var(--border);
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">TG</div>
+  <div class="nav-center">
+    <button class="toggle-btn" onclick="toggleTheme()" aria-label="Toggle dark/light mode"></button>
+  </div>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+<section class="hero">
+  <div class="hero-eyebrow">Java Full Stack Developer — Vadodara, India</div>
+  <div class="hero-name">
+    <span>TEJAS</span>
+    <span>GEHLOT</span>
+  </div>
+  <div class="hero-sub">
+    <p class="hero-desc">B.Tech student in AI & Data Science, building full-stack web applications with Spring Boot, React, and MySQL. Currently sharpening both ends of the stack.</p>
+    <div class="hero-status">
+      <span class="dot"></span>AVAILABLE FOR OPPORTUNITIES<br>
+      <span style="display:block;margin-top:0.3rem;">Parul University · 2023–2027 · CGPA 8.3</span>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="section-header">
+    <span class="section-label">Selected Projects</span>
+    <span class="section-count">03</span>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-thumb">
+        <img src="career copilot image.png" alt="CareerCopilot Preview" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="project-tags">
+        <span class="tag">Spring Boot</span><span class="tag">React</span><span class="tag">MySQL</span><span class="tag">Docker</span><span class="tag">JWT</span>
+      </div>
+      <div class="project-title">CareerCopilot</div>
+      <div class="project-desc">AI-powered career guidance platform helping students and job seekers choose suitable career paths based on skills and goals. Includes personalized roadmaps, skill gap analysis, and interview preparation.</div>
+      <a class="project-link" href="https://github.com/ramanhero/career-compass.git">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">
+        <img src="InvoiceFlow image.png" alt="InvoiceFlow Preview" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="project-tags">
+        <span class="tag">Spring Boot</span><span class="tag">React</span><span class="tag">MySQL</span><span class="tag">JWT</span>
+      </div>
+      <div class="project-title">InvoiceFlow</div>
+      <div class="project-desc">Invoice and client/staff management platform for businesses. Create, track, and organize invoices with payment status, reducing manual work and improving workflow management.</div>
+      <a class="project-link" href="https://github.com/tejasgehlot/InvoiceFlow.git">View on GitHub</a>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">
+        <img src="BHOPA image.png" alt="E-Commerce Store Preview" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="project-tags">
+        <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span><span class="tag">Vite</span>
+      </div>
+      <div class="project-title">E-Commerce Store</div>
+      <div class="project-desc">Online perfume shopping platform with smooth browsing, cart/wishlist management, order tracking, and product management. Clean, intuitive shopping experience.</div>
+      <a class="project-link" href="https://github.com/tejasgehlot/voxa-command-center.git">View on GitHub</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="skills-section" id="skills">
+  <div class="section-header">
+    <span class="section-label">Skills & Tools</span>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Languages</div>
+      <div class="skill-items">
+        <span class="skill-item">Java</span>
+        <span class="skill-item">SQL</span>
+        <span class="skill-item">TypeScript</span>
+        <span class="skill-item">JavaScript</span>
+        <span class="skill-item">HTML</span>
+        <span class="skill-item">CSS</span>
+        <span class="skill-item">C</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Backend</div>
+      <div class="skill-items">
+        <span class="skill-item">Spring Boot</span>
+        <span class="skill-item">REST APIs</span>
+        <span class="skill-item">JPA/Hibernate</span>
+        <span class="skill-item">JDBC</span>
+        <span class="skill-item">Spring Security</span>
+        <span class="skill-item">JWT Auth</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Frontend</div>
+      <div class="skill-items">
+        <span class="skill-item">React</span>
+        <span class="skill-item">Tailwind CSS</span>
+        <span class="skill-item">Routing</span>
+        <span class="skill-item">API Integration</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Database & Cloud</div>
+      <div class="skill-items">
+        <span class="skill-item">MySQL</span>
+        <span class="skill-item">MongoDB</span>
+        <span class="skill-item">AWS</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Tools</div>
+      <div class="skill-items">
+        <span class="skill-item">Git</span>
+        <span class="skill-item">Docker</span>
+        <span class="skill-item">Postman</span>
+        <span class="skill-item">IntelliJ</span>
+        <span class="skill-item">Maven</span>
+        <span class="skill-item">VS Code</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Core</div>
+      <div class="skill-items">
+        <span class="skill-item">OOP</span>
+        <span class="skill-item">Exception Handling</span>
+        <span class="skill-item">Multithreading</span>
+        <span class="skill-item">DSA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-left">
+    <div class="about-title">About<br>Me</div>
+    <div class="about-body">B.Tech student in Artificial Intelligence & Data Science at Parul University, with a strong focus on full-stack Java development. I build real-world web applications using React, Spring Boot, and MySQL — learning by shipping.<br><br>I see myself as a full-stack developer, currently deepening my frontend skills while keeping Java backend as my core strength.</div>
+    <div class="edu-block">
+      <div class="edu-item">
+        <div>
+          <div class="edu-name">Parul University</div>
+          <div class="edu-detail">B.Tech — AI & Data Science · CGPA 8.3</div>
+        </div>
+        <div class="edu-year">2023 – 2027</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-name">SRVM Sr. Sec. School</div>
+          <div class="edu-detail">Class 12: 89.67% · Class 10: 89.47%<br>JEE Mains: 79.9 percentile</div>
+        </div>
+        <div class="edu-year">2022</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-right">
+    <div class="section-label" style="margin-bottom:1rem;">Achievements</div>
+    <div class="achievements-list">
+      <div class="achievement-item">
+        <span class="ach-num">01</span>
+        PUCode Hackathon 3.0 participant — Parul University, 2026
+      </div>
+      <div class="achievement-item">
+        <span class="ach-num">02</span>
+        Codeversity National Hackathon — IIT Gandhinagar, 2026
+      </div>
+      <div class="achievement-item">
+        <span class="ach-num">03</span>
+        Completed DSA with Java — Alpha Course, Apna College
+      </div>
+      <div class="achievement-item">
+        <span class="ach-num">04</span>
+        Cyber Security Workshop — ST7 Surveillance Solutions
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;">
+      <div class="section-label" style="margin-bottom:1rem;">Languages</div>
+      <div class="skill-items" style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+        <span class="skill-item">English</span>
+        <span class="skill-item">Hindi</span>
+        <span class="skill-item">Gujarati</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="contact-top">
+    <div class="contact-heading">LET'S<br>CONNECT</div>
+    <div class="contact-links">
+      <a class="contact-link" href="https://www.linkedin.com/in/tejas-gehlot-50473a28b/" target="_blank">LinkedIn</a>
+      <a class="contact-link" href="https://github.com/tejasgehlot" target="_blank">GitHub</a>
+      <a class="contact-link" href="https://leetcode.com/u/tejas_gehlot_18/" target="_blank">LeetCode</a>
+    </div>
+  </div>
+  <div class="contact-email">
+    <a href="mailto:tejasgehlot7@gmail.com" style="font-size:1.2rem;color:var(--text);border-bottom:1px solid var(--border);">tejasgehlot7@gmail.com</a>
+  </div>
+  <footer>
+    <span>© 2026 Tejas Gehlot</span>
+    <span>Java Full Stack Developer</span>
+    <span>Vadodara, India</span>
+  </footer>
+</section>
+
+</main>
+
+<script>
+function toggleTheme(){
+  const current=document.documentElement.getAttribute('data-theme');
+  document.documentElement.setAttribute('data-theme',current==='dark'?'light':'dark');
+}
+document.documentElement.setAttribute('data-theme','light');
+</script>
+</body>
+</html>
