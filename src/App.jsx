@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import careerCopilotImage from '../career copilot image.png';
 import invoiceFlowImage from '../InvoiceFlow image.png'; 
@@ -8,14 +8,61 @@ import VoxaCaseStudy from './VoxaCaseStudy';
 import InvoiceFlowCaseStudy from './InvoiceFlowCaseStudy';
 import LiveDemoPage from "./LiveDemoPage";
 
+const ROUTES = {
+  portfolio: '/',
+  careercopstudy: '/case-studies/career-copilot',
+  invoiceflowstudy: '/case-studies/invoiceflow',
+  voxacasestudy: '/case-studies/voxa',
+  livedemo: '/live-demo',
+}
+
+const normalizePath = (pathname) => {
+  const trimmed = pathname.replace(/\/+$/, '')
+  return trimmed === '' ? '/' : trimmed
+}
+
+const pageToPath = (page) => ROUTES[page] ?? '/'
+
+const pathToPage = Object.fromEntries(
+  Object.entries(ROUTES).map(([page, path]) => [normalizePath(path), page])
+)
+
+const getPageFromPath = (pathname) => pathToPage[normalizePath(pathname)] ?? 'portfolio'
+
 function App() {
   const [theme, setTheme] = useState('light')
-  const [currentPage, setCurrentPage] = useState('portfolio')
+  const [currentPage, setCurrentPage] = useState(() => {
+    if (typeof window === 'undefined') {
+      return 'portfolio'
+    }
+
+    return getPageFromPath(window.location.pathname)
+  })
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
   }, [theme])
+
+  useLayoutEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+
+    const currentPath = normalizePath(window.location.pathname)
+    const targetPath = normalizePath(pageToPath(currentPage))
+    const hasMatchingState = window.history.state?.page === currentPage
+
+    if (currentPage !== 'portfolio' && !hasMatchingState && currentPath === targetPath) {
+      window.history.replaceState({ page: 'portfolio', synthetic: true }, '', pageToPath('portfolio'))
+      window.history.pushState({ page: currentPage, synthetic: true }, '', targetPath)
+      return
+    }
+
+    if (!hasMatchingState || currentPath !== targetPath) {
+      window.history.replaceState({ page: currentPage }, '', targetPath)
+    }
+  }, [])
 
   useEffect(() => {
     if (currentPage !== 'portfolio') {
@@ -23,22 +70,56 @@ function App() {
     }
   }, [currentPage])
 
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPage(getPageFromPath(window.location.pathname))
+    }
+
+    window.addEventListener('popstate', handlePopState)
+
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+  }, [currentPage])
+
   const toggleTheme = () => setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'))
 
+  const navigate = (page) => {
+    if (page === 'portfolio') {
+      if (currentPage !== 'portfolio') {
+        window.history.back()
+      }
+
+      return
+    }
+
+    const nextPath = pageToPath(page)
+
+    if (normalizePath(window.location.pathname) === normalizePath(nextPath)) {
+      setCurrentPage(page)
+      return
+    }
+
+    window.history.pushState({ page }, '', nextPath)
+    setCurrentPage(page)
+  }
+
   if (currentPage === 'careercopstudy') {
-    return <CareerCopilotCaseStudy onNavigate={setCurrentPage} />
+    return <CareerCopilotCaseStudy onNavigate={navigate} />
   }
 
   if (currentPage === 'voxacasestudy') {
-    return <VoxaCaseStudy onNavigate={setCurrentPage} />
+    return <VoxaCaseStudy onNavigate={navigate} />
   }
 
   if (currentPage === 'invoiceflowstudy') {
-    return <InvoiceFlowCaseStudy onNavigate={setCurrentPage} />
+    return <InvoiceFlowCaseStudy onNavigate={navigate} />
   }
 
   if (currentPage === "livedemo") {
-    return <LiveDemoPage setCurrentPage={setCurrentPage} />;
+    return <LiveDemoPage setCurrentPage={navigate} />;
 }
 
   return (
@@ -116,7 +197,7 @@ function App() {
               <div className="project-actions">
                 <button
                   className="project-link project-link-primary"
-                  onClick={() => setCurrentPage('careercopstudy')}
+                  onClick={() => navigate('careercopstudy')}
                 >
                   View Case Study
                 </button>
@@ -131,7 +212,7 @@ function App() {
                   </a>
                   <button
     className="project-link"
-    onClick={() => setCurrentPage("livedemo")}
+    onClick={() => navigate("livedemo")}
 >
     Live Demo
 </button>
@@ -161,7 +242,7 @@ function App() {
               <div className="project-actions">
                 <button
                   className="project-link project-link-primary"
-                  onClick={() => setCurrentPage('invoiceflowstudy')}
+                  onClick={() => navigate('invoiceflowstudy')}
                 >
                   View Case Study
                 </button>
@@ -176,7 +257,7 @@ function App() {
                   </a>
                   <button
     className="project-link"
-    onClick={() => setCurrentPage("livedemo")}
+    onClick={() => navigate("livedemo")}
 >
     Live Demo
 </button>
@@ -207,7 +288,7 @@ function App() {
               <div className="project-actions">
                 <button
                   className="project-link project-link-primary"
-                  onClick={() => setCurrentPage('voxacasestudy')}
+                  onClick={() => navigate('voxacasestudy')}
                 >
                   View Case Study
                 </button>
@@ -222,7 +303,7 @@ function App() {
                   </a>
                   <button
     className="project-link"
-    onClick={() => setCurrentPage("livedemo")}
+    onClick={() => navigate("livedemo")}
 >
     Live Demo
 </button>

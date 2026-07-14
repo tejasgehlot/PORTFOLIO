@@ -223,7 +223,7 @@ const InvoiceFlowCaseStudy = ({ onNavigate = () => {} }) => {
               alt="InvoiceFlow Preview"
               style={{
                 width: '100%',
-                height: '100%',
+                height: '70%',
                 objectFit: 'cover',
                 display: 'block',
               }}

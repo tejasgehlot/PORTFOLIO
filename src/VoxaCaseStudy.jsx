@@ -325,7 +325,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
               alt="VOXA Preview"
               style={{
                   width: '100%',
-                  height: '100%',
+                  height: '70%',
                   objectFit: 'cover',
                   display: 'block'
               }}
