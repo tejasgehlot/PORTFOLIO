@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import careerCopilotImage from '../career copilot image.png';
-import invoiceFlowImage from '../InvoiceFlow image.png'; 
+import invoiceFlowImage from '../InvoiceFlow image.png';
 import VOXA from '../VOXA.png';
 import CareerCopilotCaseStudy from './CareerCopilotCaseStudy';
 import VoxaCaseStudy from './VoxaCaseStudy';
@@ -120,7 +120,7 @@ function App() {
 
   if (currentPage === "livedemo") {
     return <LiveDemoPage setCurrentPage={navigate} />;
-}
+  }
 
   return (
     <div className="portfolio-page">
@@ -148,366 +148,337 @@ function App() {
       </nav>
 
       <main>
+        {/* ===== HERO ===== */}
         <section className="hero">
-          <div className="hero-eyebrow">Java Full Stack Developer — Vadodara, India</div>
-          <div className="hero-name">
-            <span>TEJAS</span>
-            <span>GEHLOT</span>
+         <div className="hero-japanese">
+                <span>開</span>
+                <span>発</span>
+                <span>者</span>
+              </div>
+
+          <div className="hero-eyebrow">
+            <span className="dot"></span>
+            Available for opportunities &nbsp;&middot;&nbsp; Vadodara, India
           </div>
-          <div className="hero-sub">
-            <p className="hero-desc">
-              B.Tech student in AI & Data Science, building full-stack web applications with Spring Boot, React, and MySQL.
-              Currently sharpening both ends of the stack.
-            </p>
-            <div className="hero-status">
-              <span className="dot"></span>AVAILABLE FOR OPPORTUNITIES<br />
-              <span style={{ display: 'block', marginTop: '0.3rem' }}>
-                Parul University · 2023–2027 · CGPA 8.3
-              </span>
+
+          <div className="hero-top">
+            <div className="hero-name">
+              TEJAS<br />
+              <span className="outline">GEHLOT</span>
+            </div>
+            <div className="hero-stats">
+              <span className="label">B.Tech AI &amp; DS</span>
+              <span className="label">Parul University</span>
+              <span className="label">CGPA 8.3</span>
+              <span className="label">2023 &ndash; 2027</span>
+            </div>
+          </div>
+
+          <div className="hero-bottom">
+            <div>
+              <div className="hero-role mono">Java Full Stack Developer</div>
+              <p className="hero-desc">
+                B.Tech student in AI &amp; Data Science, building full-stack web applications with Spring Boot, React, and MySQL. Currently sharpening both ends of the stack.
+              </p>
+            </div>
+            <div className="hero-pills">
+              <span className="pill">Spring Boot</span>
+              <span className="pill">React</span>
+              <span className="pill">MySQL</span>
+              <span className="pill">Docker</span>
+              <span className="pill">JWT</span>
             </div>
           </div>
         </section>
 
+        {/* ===== SELECTED WORK ===== */}
         <section className="work" id="work">
           <div className="section-header">
-            <span className="section-label">Selected Projects</span>
-            <span className="section-count">03</span>
+            <div className="section-heading">SELECTED<br />WORK</div>
+            <div className="section-meta">
+              <div className="label">03 Projects</div>
+              <div className="label" style={{ marginTop: '0.3rem' }}>2025 &ndash; 2026</div>
+            </div>
           </div>
-          <div className="projects-grid">
-            <div className="project-card">
-              <div className="project-thumb">
-                <img
-                  src={careerCopilotImage}
-                  alt="CareerCopilot Preview"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-              </div>
-              <div className="project-tags">
-                <span className="tag">Spring Boot</span>
-                <span className="tag">React</span>
-                <span className="tag">MySQL</span>
-                <span className="tag">Docker</span>
-                <span className="tag">JWT</span>
-              </div>
-              <div className="project-title">CareerCopilot</div>
-              <div className="project-desc">
-                AI-powered career guidance platform helping students and job seekers choose suitable career paths based on skills
-                and goals. Includes personalized roadmaps and skill gap analysis.
+
+          {/* 01 — image left, content right */}
+          <div className="project-row">
+            <div className="project-thumb">
+              <img src={careerCopilotImage} alt="CareerCopilot preview" />
+              <span className="wmark">01</span>
+            </div>
+            <div className="project-content">
+              <div>
+                <div className="project-meta-row">
+                  <span className="label">CareerCopilot</span>
+                  <span className="label">2026</span>
+                </div>
+                <div className="project-name">AI-Powered Career<br />Guidance Platform</div>
+                <p className="project-desc">
+                  AI-powered career guidance platform helping students and job seekers choose suitable career paths based on skills and goals. Includes personalized roadmaps and skill gap analysis.
+                </p>
+                <div className="project-tags">
+                  <span className="pill">Spring Boot</span>
+                  <span className="pill">React</span>
+                  <span className="pill">MySQL</span>
+                  <span className="pill">Docker</span>
+                  <span className="pill">JWT</span>
+                </div>
               </div>
               <div className="project-actions">
-                <button
-                  className="project-link project-link-primary"
-                  onClick={() => navigate('careercopstudy')}
-                >
-                  View Case Study
+                <button className="project-link project-link-primary" onClick={() => navigate('careercopstudy')}>
+                  Case Study &rarr;
                 </button>
-                <div className="project-links-secondary">
-                  <a
-                    className="project-link"
-                    href="https://github.com/ramanhero/career-compass.git"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    GitHub
-                  </a>
-                  <button
-    className="project-link"
-    onClick={() => navigate("livedemo")}
->
-    Live Demo
-</button>
-                </div>
+                <a className="project-link" href="https://github.com/ramanhero/career-compass.git" target="_blank" rel="noreferrer">
+                  GitHub &#8599;
+                </a>
+                <button className="project-link" onClick={() => navigate('livedemo')}>
+                  Live Demo &#8599;
+                </button>
               </div>
             </div>
+          </div>
 
-            <div className="project-card">
-              <div className="project-thumb">
-                <img
-                  src={invoiceFlowImage}
-                  alt="InvoiceFlow Preview"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-              </div>
-              <div className="project-tags">
-                <span className="tag">Spring Boot</span>
-                <span className="tag">React</span>
-                <span className="tag">MySQL</span>
-                <span className="tag">JWT</span>
-              </div>
-              <div className="project-title">InvoiceFlow</div>
-              <div className="project-desc">
-                Invoice and client/staff management platform for businesses. Create, track, and organize invoices with payment
-                status, reducing manual work and improving workflow management.
+          {/* 02 — content left, image right (alternated) */}
+          <div className="project-row flip">
+            <div className="project-content">
+              <div>
+                <div className="project-meta-row">
+                  <span className="label">InvoiceFlow</span>
+                  <span className="label">2026</span>
+                </div>
+                <div className="project-name">Multi-Tenant<br />Billing SaaS</div>
+                <p className="project-desc">
+                  Invoice and client/staff management platform for businesses. Create, track, and organize invoices with payment status, reducing manual work and improving workflow management.
+                </p>
+                <div className="project-tags">
+                  <span className="pill">Spring Boot</span>
+                  <span className="pill">React</span>
+                  <span className="pill">MySQL</span>
+                  <span className="pill">JWT</span>
+                </div>
               </div>
               <div className="project-actions">
-                <button
-                  className="project-link project-link-primary"
-                  onClick={() => navigate('invoiceflowstudy')}
-                >
-                  View Case Study
+                <button className="project-link project-link-primary" onClick={() => navigate('invoiceflowstudy')}>
+                  Case Study &rarr;
                 </button>
-                <div className="project-links-secondary">
-                  <a
-                    className="project-link"
-                    href="https://github.com/tejasgehlot/InvoiceFlow.git"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    GitHub
-                  </a>
-                  <button
-    className="project-link"
-    onClick={() => navigate("livedemo")}
->
-    Live Demo
-</button>
-                </div>
+                <a className="project-link" href="https://github.com/tejasgehlot/InvoiceFlow.git" target="_blank" rel="noreferrer">
+                  GitHub &#8599;
+                </a>
+                <button className="project-link" onClick={() => navigate('livedemo')}>
+                  Live Demo &#8599;
+                </button>
               </div>
             </div>
+            <div className="project-thumb">
+              <img src={invoiceFlowImage} alt="InvoiceFlow preview" />
+              <span className="wmark">02</span>
+            </div>
+          </div>
 
-            <div className="project-card">
-              <div className="project-thumb">
-                <img
-                  src={VOXA}
-                  alt="VOXA Preview"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
-              </div>
-              <div className="project-tags">
-                <span className="tag">Spring Boot</span>
-                <span className="tag">React</span>
-                <span className="tag">TypeScript</span>
-                <span className="tag">JWT</span>
-                <span className="tag">AI</span>
-              </div>
-              <div className="project-title">VOXA</div>
-              <div className="project-desc">
-                AI-powered civic complaint resolution platform for smart-city workflows, combining photos, AI triage,
-                department routing, audit trails, and role-based governance in a production-style backend.
+          {/* 03 — image left, content right */}
+          <div className="project-row">
+            <div className="project-thumb">
+              <img src={VOXA} alt="VOXA preview" />
+              <span className="wmark">03</span>
+            </div>
+            <div className="project-content">
+              <div>
+                <div className="project-meta-row">
+                  <span className="label">VOXA</span>
+                  <span className="label">2026</span>
+                </div>
+                <div className="project-name">AI Civic Complaint<br />Resolution Platform</div>
+                <p className="project-desc">
+                  AI-powered civic complaint resolution platform for smart-city workflows, combining photos, AI triage, department routing, audit trails, and role-based governance in a production-style backend.
+                </p>
+                <div className="project-tags">
+                  <span className="pill">Spring Boot</span>
+                  <span className="pill">React</span>
+                  <span className="pill">TypeScript</span>
+                  <span className="pill">JWT</span>
+                  <span className="pill">AI</span>
+                </div>
               </div>
               <div className="project-actions">
-                <button
-                  className="project-link project-link-primary"
-                  onClick={() => navigate('voxacasestudy')}
-                >
-                  View Case Study
+                <button className="project-link project-link-primary" onClick={() => navigate('voxacasestudy')}>
+                  Case Study &rarr;
                 </button>
-                <div className="project-links-secondary">
-                  <a
-                    className="project-link"
-                    href="https://github.com/tejasgehlot/voxa-command-center.git"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    GitHub
-                  </a>
-                  <button
-    className="project-link"
-    onClick={() => navigate("livedemo")}
->
-    Live Demo
-</button>
-                </div>
+                <a className="project-link" href="https://github.com/tejasgehlot/voxa-command-center.git" target="_blank" rel="noreferrer">
+                  GitHub &#8599;
+                </a>
+                <button className="project-link" onClick={() => navigate('livedemo')}>
+                  Live Demo &#8599;
+                </button>
               </div>
             </div>
           </div>
         </section>
 
+        {/* ===== CRAFT / SKILLS ===== */}
         <section className="skills-section" id="skills">
           <div className="section-header">
-            <span className="section-label">Skills & Tools</span>
+            <div className="section-heading">CRAFT</div>
+            <span className="label">Skills &amp; Tools</span>
           </div>
-          <div className="skills-grid">
-            <div className="skill-group">
-              <div className="skill-group-title">Languages</div>
-              <div className="skill-items">
-                <span className="skill-item">Java</span>
-                <span className="skill-item">SQL</span>
-                <span className="skill-item">TypeScript</span>
-                <span className="skill-item">JavaScript</span>
-                <span className="skill-item">HTML</span>
-                <span className="skill-item">CSS</span>
-                <span className="skill-item">C</span>
+
+          <div className="skills-columns">
+            <div className="skill-col">
+              <span className="label">Backend Core</span>
+              <div className="skill-col-heading" style={{ marginTop: '1.1rem' }}>Spring<br />Boot</div>
+              <div className="skill-col-list">
+                REST APIs &middot; JPA/Hibernate<br />
+                JDBC &middot; Spring Security<br />
+                JWT Authentication
               </div>
             </div>
-            <div className="skill-group">
-              <div className="skill-group-title">Backend</div>
-              <div className="skill-items">
-                <span className="skill-item">Spring Boot</span>
-                <span className="skill-item">REST APIs</span>
-                <span className="skill-item">JPA/Hibernate</span>
-                <span className="skill-item">JDBC</span>
-                <span className="skill-item">Spring Security</span>
-                <span className="skill-item">JWT Auth</span>
+            <div className="skill-col">
+              <span className="label">Languages</span>
+              <div className="skill-col-heading" style={{ marginTop: '1.1rem', marginBottom: '0.2rem' }}>Java</div>
+              <div className="skill-col-heading outline" style={{ fontSize: '1.5rem', marginBottom: '0.6rem' }}>&amp; SQL</div>
+              <div className="skill-col-list">
+                TypeScript &middot; JavaScript &middot; C<br />
+                HTML &middot; CSS<br />
+                OOP &middot; Multithreading &middot; DSA
               </div>
             </div>
-            <div className="skill-group">
-              <div className="skill-group-title">Frontend</div>
-              <div className="skill-items">
-                <span className="skill-item">React</span>
-                <span className="skill-item">Tailwind CSS</span>
-                <span className="skill-item">Routing</span>
-                <span className="skill-item">API Integration</span>
+            <div className="skill-col">
+              <span className="label">Frontend</span>
+              <div className="skill-col-heading" style={{ marginTop: '1.1rem', marginBottom: '0.2rem' }}>React</div>
+              <div style={{ fontSize: '1.3rem', fontWeight: 300, color: 'var(--text3)', letterSpacing: '-0.01em', marginBottom: '0.6rem' }}>&amp; Growing</div>
+              <div className="skill-col-list">
+                Tailwind CSS &middot; TypeScript<br />
+                Routing &middot; Forms<br />
+                API Integration
               </div>
             </div>
-            <div className="skill-group">
-              <div className="skill-group-title">Database & Cloud</div>
-              <div className="skill-items">
-                <span className="skill-item">MySQL</span>
-                <span className="skill-item">MongoDB</span>
-                <span className="skill-item">AWS</span>
+          </div>
+
+          <div className="tools-strip">
+            <span className="label">Database, Cloud &amp; Tools</span>
+            <span className="pill">MySQL</span>
+            <span className="pill">MongoDB</span>
+            <span className="pill">AWS</span>
+            <span className="pill">Git</span>
+            <span className="pill">Docker</span>
+            <span className="pill">Postman</span>
+            <span className="pill">IntelliJ</span>
+            <span className="pill">Maven</span>
+            <span className="pill">VS Code</span>
+          </div>
+        </section>
+
+        {/* ===== ABOUT ===== */}
+        <section className="about-section" id="about">
+          <div className="section-header">
+            <div className="section-heading">ABOUT</div>
+            <span className="label">Tejas Gehlot</span>
+          </div>
+
+          <div className="about-grid">
+            <div className="about-col left">
+              <div className="about-body">
+                <p>
+                  B.Tech student in Artificial Intelligence &amp; Data Science at Parul University, with a strong focus on full-stack Java development. I build real-world web applications using React, Spring Boot, and MySQL &mdash; learning by shipping.
+                </p>
+                <p>
+                  I see myself as a full-stack developer, currently deepening my frontend skills while keeping Java backend as my core strength.
+                </p>
+              </div>
+
+              <span className="label">Education</span>
+              <div className="edu-block">
+                <div className="edu-item">
+                  <div>
+                    <div className="edu-name">Parul University</div>
+                    <div className="edu-detail">B.Tech &mdash; AI &amp; Data Science &middot; CGPA 8.3</div>
+                  </div>
+                  <span className="label">2023&ndash;27</span>
+                </div>
+                <div className="edu-item">
+                  <div>
+                    <div className="edu-name">SRVM Sr. Sec. School</div>
+                    <div className="edu-detail">
+                      Class 12: 89.67% &middot; Class 10: 89.47%<br />
+                      JEE Mains: 79.9 percentile
+                    </div>
+                  </div>
+                  <span className="label">2022</span>
+                </div>
+              </div>
+
+              <div style={{ marginTop: '1.5rem' }}>
+                <span className="label">Languages</span>
+                <div className="lang-row">
+                  <span className="pill">English</span>
+                  <span className="pill">Hindi</span>
+                  <span className="pill">Gujarati</span>
+                </div>
               </div>
             </div>
-            <div className="skill-group">
-              <div className="skill-group-title">Tools</div>
-              <div className="skill-items">
-                <span className="skill-item">Git</span>
-                <span className="skill-item">Docker</span>
-                <span className="skill-item">Postman</span>
-                <span className="skill-item">IntelliJ</span>
-                <span className="skill-item">Maven</span>
-                <span className="skill-item">VS Code</span>
-              </div>
-            </div>
-            <div className="skill-group">
-              <div className="skill-group-title">Core</div>
-              <div className="skill-items">
-                <span className="skill-item">OOP</span>
-                <span className="skill-item">Exception Handling</span>
-                <span className="skill-item">Multithreading</span>
-                <span className="skill-item">DSA</span>
+
+            <div className="about-col">
+              <span className="label" style={{ display: 'block', marginBottom: '1.5rem' }}>What Shaped Me</span>
+              <div className="timeline">
+                <div className="timeline-item">
+                  <span className="timeline-dot"></span>
+                  <span className="label">01 &middot; 2026</span>
+                  <div className="timeline-title" style={{ marginTop: '0.35rem' }}>PUCode Hackathon 3.0</div>
+                  <div className="timeline-desc">Parul University &mdash; competitive hackathon. Real engineering under real deadline pressure.</div>
+                </div>
+                <div className="timeline-item">
+                  <span className="timeline-dot"></span>
+                  <span className="label">02 &middot; 2026</span>
+                  <div className="timeline-title" style={{ marginTop: '0.35rem' }}>Codeversity National Hackathon</div>
+                  <div className="timeline-desc">IIT Gandhinagar &mdash; national-level competition with teams from across India.</div>
+                </div>
+                <div className="timeline-item">
+                  <span className="timeline-dot outline"></span>
+                  <span className="label">03</span>
+                  <div className="timeline-title" style={{ marginTop: '0.35rem' }}>DSA with Java &mdash; Alpha Course</div>
+                  <div className="timeline-desc">Apna College &mdash; rigorous data structures &amp; algorithms training in Java.</div>
+                </div>
+                <div className="timeline-item">
+                  <span className="timeline-dot outline"></span>
+                  <span className="label">04</span>
+                  <div className="timeline-title" style={{ marginTop: '0.35rem' }}>Cyber Security Workshop</div>
+                  <div className="timeline-desc">ST7 Surveillance Solutions &mdash; hands-on exposure to security practices and real-world systems.</div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-<section className="about-section" id="about">
-
-  {/* ---------- ABOUT ME ---------- */}
-  <div className="about-left">
-    <div className="about-title">
-      ABOUT ME
-    </div>
-
-    <div className="about-body">
-      B.Tech student in Artificial Intelligence & Data Science at Parul University,
-      with a strong focus on full-stack Java development. I build real-world web
-      applications using React, Spring Boot, and MySQL — learning by shipping.
-
-      <br />
-      <br />
-
-      I see myself as a full-stack developer, currently deepening my frontend skills
-      while keeping Java backend as my core strength.
-    </div>
-
-    <div className="edu-block">
-      <div className="edu-item">
-        <div>
-          <div className="edu-name">Parul University</div>
-          <div className="edu-detail">
-            B.Tech — AI & Data Science · CGPA 8.3
-          </div>
-        </div>
-        <div className="edu-year">2023 – 2027</div>
-      </div>
-
-      <div className="edu-item">
-        <div>
-          <div className="edu-name">SRVM Sr. Sec. School</div>
-          <div className="edu-detail">
-            Class 12: 89.67% · Class 10: 89.47%
-            <br />
-            JEE Mains: 79.9 percentile
-          </div>
-        </div>
-        <div className="edu-year">2022</div>
-      </div>
-    </div>
-  </div>
-
-  {/* ---------- WHAT SHAPED ME ---------- */}
-  <div className="about-right">
-
-    <div className="section-label" style={{ marginBottom: "1rem" }}>
-      WHAT SHAPED ME
-    </div>
-
-    <div className="achievements-list">
-      <div className="achievement-item">
-        <span className="ach-num">01</span>
-        PUCode Hackathon 3.0 participant — Parul University, 2026
-      </div>
-
-      <div className="achievement-item">
-        <span className="ach-num">02</span>
-        Codeversity National Hackathon — IIT Gandhinagar, 2026
-      </div>
-
-      <div className="achievement-item">
-        <span className="ach-num">03</span>
-        Completed DSA with Java — Alpha Course, Apna College
-      </div>
-
-      <div className="achievement-item">
-        <span className="ach-num">04</span>
-        Cyber Security Workshop — ST7 Surveillance Solutions
-      </div>
-    </div>
-
-    <div style={{ marginTop: "2.5rem" }}>
-      <div
-        className="section-label"
-        style={{ marginBottom: "1rem" }}
-      >
-        LANGUAGES
-      </div>
-
-      <div
-        className="skill-items"
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "0.4rem",
-        }}
-      >
-        <span className="skill-item">English</span>
-        <span className="skill-item">Hindi</span>
-        <span className="skill-item">Gujarati</span>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
+        {/* ===== CONTACT ===== */}
         <section className="contact-section" id="contact">
+          <span className="label" style={{ display: 'block', marginBottom: '2rem' }}>Get In Touch</span>
+
           <div className="contact-top">
-            <div className="contact-heading">LET'S<br />CONNECT</div>
+            <div className="contact-heading">
+              LET'S<br />BUILD<br />
+              <span className="outline">TOGETHER</span>
+            </div>
             <div className="contact-links">
-              <a className="contact-link" href="https://www.linkedin.com/in/tejas-gehlot-50473a28b/" target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-              <a className="contact-link" href="https://github.com/tejasgehlot" target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-              <a className="contact-link" href="https://leetcode.com/u/tejas_gehlot_18/" target="_blank" rel="noreferrer">
-                LeetCode
-              </a>
+              <a className="contact-link" href="https://www.linkedin.com/in/tejas-gehlot-50473a28b/" target="_blank" rel="noreferrer">LinkedIn &#8599;</a>
+              <a className="contact-link" href="https://github.com/tejasgehlot" target="_blank" rel="noreferrer">GitHub &#8599;</a>
+              <a className="contact-link" href="https://leetcode.com/u/tejas_gehlot_18/" target="_blank" rel="noreferrer">LeetCode &#8599;</a>
             </div>
           </div>
+
           <div className="contact-email">
-  <a
-    className="contact-email-link"
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=tejasgehlot7@gmail.com&su=Let's%20Connect!"
-    target="_blank"
-    rel="noreferrer" 
-  >
-    tejasgehlot7@gmail.com
-  </a>
-</div>
+            <span className="label" style={{ display: 'block', marginBottom: '0.5rem' }}>Email</span>
+            <a
+              className="contact-email-link"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=tejasgehlot7@gmail.com&su=Let's%20Connect!"
+              target="_blank"
+              rel="noreferrer"
+            >
+              tejasgehlot7@gmail.com
+            </a>
+          </div>
+
           <footer>
-            <span>© 2026 Tejas Gehlot</span>
+            <span>&copy; 2026 Tejas Gehlot</span>
             <span>Java Full Stack Developer</span>
             <span>Vadodara, India</span>
           </footer>
