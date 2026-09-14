@@ -62,7 +62,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
           padding: '1.2rem 3rem',
         }}
       >
-        <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
           TG
         </div>
         <button
@@ -71,7 +71,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
-            fontFamily: "'Space Mono', monospace",
+            fontFamily: "'JetBrains Mono', monospace",
             fontSize: '0.75rem',
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
@@ -117,7 +117,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
                     background: 'var(--bg2)',
                     border: '1px solid var(--border)',
                     borderRadius: '6px',
-                    fontFamily: "'Space Mono', monospace",
+                    fontFamily: "'JetBrains Mono', monospace",
                     fontSize: '0.7rem',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
@@ -139,7 +139,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
                   color: 'var(--bg)',
                   border: 'none',
                   borderRadius: '6px',
-                  fontFamily: "'Space Mono', monospace",
+                  fontFamily: "'JetBrains Mono', monospace",
                   fontSize: '0.75rem',
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
@@ -161,7 +161,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
                   color: 'var(--text)',
                   border: '1px solid var(--border)',
                   borderRadius: '6px',
-                  fontFamily: "'Space Mono', monospace",
+                  fontFamily: "'JetBrains Mono', monospace",
                   fontSize: '0.75rem',
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
@@ -210,7 +210,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
 
       {/* ENGINEERING SNAPSHOT */}
       <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>
-        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'Space Mono', monospace", letterSpacing: '0.1em' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em' }}>
           Engineering Snapshot
         </motion.h2>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -229,7 +229,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
               <motion.div key={idx} variants={fadeIn} custom={idx} style={{ padding: '2rem', background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: '8px', transition: 'all 0.3s' }}>
                 <Icon style={{ marginBottom: '1rem', color: 'var(--text2)' }} size={28} />
                 <div style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>{stat.number}</div>
-                <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text3)' }}>{stat.label}</div>
+                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text3)' }}>{stat.label}</div>
               </motion.div>
             )
           })}
@@ -238,7 +238,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
 
       {/* THE PROBLEM */}
       <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>
-        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'Space Mono', monospace", letterSpacing: '0.1em' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em' }}>
           The Problem
         </motion.h2>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ maxWidth: '800px', lineHeight: 1.8, color: 'var(--text2)', margin: '0 auto' }}>
@@ -256,7 +256,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
 
       {/* SOLUTION */}
       <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>
-        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'Space Mono', monospace", letterSpacing: '0.1em' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em' }}>
           Solution
         </motion.h2>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ maxWidth: '800px', lineHeight: 1.8, color: 'var(--text2)', margin: '0 auto' }}>
@@ -274,7 +274,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
 
       {/* CORE FEATURES */}
       <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>
-        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'Space Mono', monospace", letterSpacing: '0.1em' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em' }}>
           Core Features
         </motion.h2>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -291,10 +291,10 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
 
       {/* SYSTEM ARCHITECTURE */}
       <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>
-        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'Space Mono', monospace", letterSpacing: '0.1em' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em' }}>
           System Architecture
         </motion.h2>
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ padding: '2rem', background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: '8px', fontFamily: "'Space Mono', monospace", fontSize: '0.85rem', lineHeight: 2, marginBottom: '2rem', color: 'var(--text2)', maxWidth: '800px', margin: '0 auto 2rem' }}>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ padding: '2rem', background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: '8px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', lineHeight: 2, marginBottom: '2rem', color: 'var(--text2)', maxWidth: '800px', margin: '0 auto 2rem' }}>
           <div>React Frontend</div>
           <div style={{ marginLeft: '2rem' }}>↓</div>
           <div style={{ marginLeft: '2rem' }}>Spring Cloud Gateway</div>
@@ -324,7 +324,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
 
       {/* ENGINEERING HIGHLIGHTS */}
       <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>
-        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'Space Mono', monospace", letterSpacing: '0.1em' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em' }}>
           Engineering Highlights
         </motion.h2>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -339,7 +339,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
 
       {/* CHALLENGES */}
       <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>
-        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'Space Mono', monospace", letterSpacing: '0.1em' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textTransform: 'uppercase', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em' }}>
           Engineering Challenges
         </motion.h2>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
@@ -370,21 +370,21 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
 
       {/* CTA SECTION */}
       <section style={{ padding: '6rem 3rem', textAlign: 'center' }}>
-        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', fontFamily: "'Space Mono', monospace", letterSpacing: '0.1em' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em' }}>
           Ready to Build?
         </motion.h2>
         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '400px', margin: '0 auto 3rem' }}>
-          <a href="https://github.com/ramanhero/career-compass" target="_blank" rel="noreferrer" style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'var(--text)', color: 'var(--bg)', border: 'none', borderRadius: '6px', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'opacity 0.2s', textDecoration: 'none', textAlign: 'center' }}>
+          <a href="https://github.com/ramanhero/career-compass" target="_blank" rel="noreferrer" style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'var(--text)', color: 'var(--bg)', border: 'none', borderRadius: '6px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'opacity 0.2s', textDecoration: 'none', textAlign: 'center' }}>
             View GitHub Repository
           </a>
-          <button style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '6px', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s' }}>
+          <button style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '6px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s' }}>
             Live Demo
           </button>
-          <button style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '6px', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s' }}>
+          <button style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '6px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s' }}>
             Architecture Diagram
           </button>
         </motion.div>
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ paddingTop: '2rem', borderTop: '1px solid var(--border)', color: 'var(--text3)', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ paddingTop: '2rem', borderTop: '1px solid var(--border)', color: 'var(--text3)', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
           Built with Java • Spring Boot • React • PostgreSQL • Docker • RabbitMQ • FastAPI • Gemini AI
         </motion.div>
       </section>

@@ -256,7 +256,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
           padding: '1.2rem 3rem',
         }}
       >
-        <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
           TG
         </div>
         <button
@@ -265,7 +265,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
-            fontFamily: "'Space Mono', monospace",
+            fontFamily: "'JetBrains Mono', monospace",
             fontSize: '0.75rem',
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
@@ -289,7 +289,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
           style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '3rem', alignItems: 'center', maxWidth: '1240px', margin: '0 auto' }}
         >
           <div style={{ paddingTop: '2rem' }}>
-            <motion.div variants={fadeIn} custom={0} style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--text3)', marginBottom: '0.8rem' }}>
+            <motion.div variants={fadeIn} custom={0} style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.18em', color: 'var(--text3)', marginBottom: '0.8rem' }}>
               VOXA · Civic Voice Platform
             </motion.div>
             <motion.h1 variants={fadeIn} custom={1} style={{ fontSize: '3.5rem', fontWeight: 700, lineHeight: 1.05, marginBottom: '1.25rem' }}>
@@ -303,17 +303,17 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
             </motion.p>
             <motion.div variants={fadeIn} custom={4} style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
               {['Java 21', 'Spring Boot 3', 'Spring Security', 'MySQL', 'JPA', 'JWT', 'Cloudinary', 'Gemini AI', 'Twilio', 'Nominatim', 'React', 'TanStack Start', 'TypeScript', 'Railway', 'Cloudflare'].map((tech) => (
-                <span key={tech} style={{ padding: '0.5rem 0.9rem', border: '1px solid var(--border)', borderRadius: '999px', fontFamily: "'Space Mono', monospace", fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text2)' }}>
+                <span key={tech} style={{ padding: '0.5rem 0.9rem', border: '1px solid var(--border)', borderRadius: '999px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.68rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text2)' }}>
                   {tech}
                 </span>
               ))}
             </motion.div>
             <motion.div variants={fadeIn} custom={5} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <a href="https://github.com/tejasgehlot/voxa-command-center.git" target="_blank" rel="noreferrer" style={{ padding: '0.8rem 1.4rem', background: 'var(--text)', color: 'var(--bg)', border: 'none', borderRadius: '6px', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+              <a href="https://github.com/tejasgehlot/voxa-command-center.git" target="_blank" rel="noreferrer" style={{ padding: '0.8rem 1.4rem', background: 'var(--text)', color: 'var(--bg)', border: 'none', borderRadius: '6px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
                 <Github size={14} />
                 GitHub
               </a>
-              <button style={{ padding: '0.8rem 1.4rem', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '6px', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', cursor: 'pointer' }}>
+              <button style={{ padding: '0.8rem 1.4rem', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '6px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em', cursor: 'pointer' }}>
                 Live Demo
               </button>
             </motion.div>
@@ -356,7 +356,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
           {metrics.map((item, idx) => (
             <motion.div key={item.label} variants={fadeIn} custom={idx} style={{ border: '1px solid var(--border)', padding: '1.4rem 1.2rem', background: 'var(--card-bg)' }}>
               <div style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '0.25rem' }}>{item.value}</div>
-              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text3)' }}>{item.label}</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text3)' }}>{item.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -381,7 +381,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
             </div>
           </div>
           <div style={{ border: '1px solid var(--border)', padding: '2rem', background: 'var(--card-bg)' }}>
-            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text3)', marginBottom: '1rem' }}>External integrations</div>
+            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.14em', color: 'var(--text3)', marginBottom: '1rem' }}>External integrations</div>
             <div style={{ display: 'grid', gap: '0.8rem' }}>
               {['Gemini AI', 'Cloudinary', 'Twilio', 'OpenStreetMap Nominatim'].map((service) => (
                 <div key={service} style={{ padding: '0.8rem 1rem', border: '1px solid var(--border)', color: 'var(--text2)' }}>{service}</div>
@@ -397,7 +397,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
         </motion.h2>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="case-two-col" style={{ maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 0.8fr', gap: '2rem' }}>
           <div style={{ border: '1px solid var(--border)', padding: '2rem', background: 'var(--card-bg)' }}>
-            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '1rem' }}>Built by me</div>
+            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '1rem' }}>Built by me</div>
             <div style={{ display: 'grid', gap: '0.7rem' }}>
               {['Spring Boot backend', 'All 29 REST APIs', 'Complete database schema', 'JWT Authentication', 'Role Based Authorization', 'Business Logic', 'AI Integration', 'Gemini fallback mechanism', 'Cloudinary Integration', 'Location Detection', 'DTO Layer', 'Global Exception Handling', 'Database Seeding', 'Railway Deployment', 'Frontend Integration'].map((item) => (
                 <div key={item} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: 'var(--text2)' }}>
@@ -408,7 +408,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
             </div>
           </div>
           <div style={{ border: '1px solid var(--border)', padding: '2rem', background: 'var(--card-bg)' }}>
-            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '1rem' }}>Team work</div>
+            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '1rem' }}>Team work</div>
             <div style={{ display: 'grid', gap: '0.7rem', color: 'var(--text2)' }}>
               {['Frontend UI', 'Research', 'Presentation', 'Documentation'].map((item) => (
                 <div key={item}>{item}</div>
@@ -425,7 +425,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ maxWidth: '1120px', margin: '0 auto', display: 'grid', gap: '1.5rem' }}>
           {decisions.map((decision, index) => (
             <div key={decision.title} style={{ borderLeft: '2px solid var(--border)', paddingLeft: '1.5rem' }}>
-              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '0.4rem' }}>Decision {index + 1}</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '0.4rem' }}>Decision {index + 1}</div>
               <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.6rem' }}>{decision.title}</h3>
               <div style={{ color: 'var(--text2)', lineHeight: 1.8 }}>
                 <p style={{ marginBottom: '0.6rem' }}><strong>Problem:</strong> {decision.problem}</p>
@@ -479,7 +479,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants} style={{ maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
           {services.map((service, idx) => (
             <motion.div key={service.title} variants={fadeIn} custom={idx} style={{ border: '1px solid var(--border)', padding: '1.5rem', background: 'var(--card-bg)' }}>
-              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '0.6rem' }}>{service.title}</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '0.6rem' }}>{service.title}</div>
               <div style={{ color: 'var(--text2)', lineHeight: 1.7 }}>
                 <p style={{ marginBottom: '0.5rem' }}><strong>Purpose:</strong> {service.purpose}</p>
                 <p style={{ marginBottom: '0.5rem' }}><strong>Data exchanged:</strong> {service.data}</p>
@@ -527,7 +527,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem' }}>
           {['Real multi-role authorization', 'Real AI integration', 'Privacy-first architecture', 'Production-grade backend', 'Built under real deadline constraints'].map((item, idx) => (
             <div key={item} style={{ border: '1px solid var(--border)', padding: '1.5rem', background: 'var(--card-bg)' }}>
-              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '0.7rem' }}>{idx + 1}</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '0.7rem' }}>{idx + 1}</div>
               <div style={{ color: 'var(--text2)', lineHeight: 1.7 }}>{item}</div>
             </div>
           ))}
@@ -540,7 +540,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
         </motion.h2>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="case-two-col" style={{ maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
           <div style={{ border: '1px solid var(--border)', padding: '2rem', background: 'var(--card-bg)' }}>
-            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '1rem' }}>Backend Engineering</div>
+            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '1rem' }}>Backend Engineering</div>
             <div style={{ display: 'grid', gap: '0.7rem', color: 'var(--text2)' }}>
               {['REST APIs', 'Spring Security', 'JWT', 'JPA', 'DTO Design', 'Multipart Upload', 'External APIs', 'Database Design', 'Validation', 'Logging', 'Exception Handling', 'Scheduling', 'Caching'].map((item) => (
                 <div key={item}>{item}</div>
@@ -548,7 +548,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
             </div>
           </div>
           <div style={{ border: '1px solid var(--border)', padding: '2rem', background: 'var(--card-bg)' }}>
-            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '1rem' }}>Software Architecture</div>
+            <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', marginBottom: '1rem' }}>Software Architecture</div>
             <div style={{ display: 'grid', gap: '0.7rem', color: 'var(--text2)' }}>
               {['Monolith Design', 'Resilience Engineering', 'Privacy-first Design', 'Deployment Awareness', 'SSR Integration', 'Cloud Storage Strategy', 'API Design', 'Domain Modeling'].map((item) => (
                 <div key={item}>{item}</div>
@@ -565,7 +565,7 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gap: '1rem' }}>
           {timeline.map(([day, label], idx) => (
             <div key={day} className="case-timeline-row" style={{ display: 'flex', alignItems: 'center', gap: '1rem', borderLeft: '2px solid var(--border)', paddingLeft: '1.5rem' }}>
-              <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', minWidth: '80px' }}>{day}</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text3)', minWidth: '80px' }}>{day}</div>
               <div style={{ color: 'var(--text2)' }}>{label}</div>
             </div>
           ))}
@@ -573,21 +573,21 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
       </section>
 
       <section style={{ padding: '6rem 3rem', textAlign: 'center' }}>
-        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', fontFamily: "'Space Mono', monospace", letterSpacing: '0.1em' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '2rem', textTransform: 'uppercase', fontFamily: "'JetBrains Mono', monospace", letterSpacing: '0.1em' }}>
           Ready to Build?
         </motion.h2>
         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '400px', margin: '0 auto 3rem' }}>
-          <a href="https://github.com/tejasgehlot/voxa-command-center.git" target="_blank" rel="noreferrer" style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'var(--text)', color: 'var(--bg)', border: 'none', borderRadius: '6px', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'opacity 0.2s', textDecoration: 'none', textAlign: 'center' }}>
+          <a href="https://github.com/tejasgehlot/voxa-command-center.git" target="_blank" rel="noreferrer" style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'var(--text)', color: 'var(--bg)', border: 'none', borderRadius: '6px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'opacity 0.2s', textDecoration: 'none', textAlign: 'center' }}>
             View GitHub Repository
           </a>
-          <button style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '6px', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s' }}>
+          <button style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '6px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s' }}>
             Live Demo
           </button>
-          <button style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '6px', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s' }}>
+          <button style={{ padding: '0.75rem 1.5rem', width: '100%', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border)', borderRadius: '6px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', cursor: 'pointer', transition: 'all 0.2s' }}>
             Architecture Diagram
           </button>
         </motion.div>
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ paddingTop: '2rem', borderTop: '1px solid var(--border)', color: 'var(--text3)', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ paddingTop: '2rem', borderTop: '1px solid var(--border)', color: 'var(--text3)', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
           Built with Java • Spring Boot 3 • MySQL • React • TypeScript • Railway • Cloudflare • Gemini AI • Cloudinary • Nominatim
         </motion.div>
       </section>
