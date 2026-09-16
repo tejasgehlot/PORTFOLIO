@@ -106,10 +106,10 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
               AI-Powered Career Management Platform
             </motion.p>
             <motion.p variants={fadeIn} custom={2} className="case-hero-copy" style={{ fontSize: '1rem', color: 'var(--text2)', lineHeight: 1.8, maxWidth: '500px', marginBottom: '2rem' }}>
-              Production-grade microservices platform helping engineering students prepare for placements through AI-powered career roadmaps, company tracking and personalized guidance.
+              An 8-service Spring Boot microservices platform helping engineering students prepare for placements through AI-generated career roadmaps, skill assessments, company tracking and an auto-built resume — all behind a single API gateway.
             </motion.p>
             <motion.div variants={fadeIn} custom={3} style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '2rem' }}>
-              {['Java', 'Spring Boot', 'React', 'TypeScript', 'PostgreSQL', 'Docker', 'Python', 'FastAPI', 'Gemini AI'].map((tech) => (
+              {['Java 17', 'Spring Boot', 'Spring Cloud Gateway', 'React', 'TypeScript', 'PostgreSQL', 'Flyway', 'Docker', 'RabbitMQ', 'Gemini AI'].map((tech) => (
                 <span
                   key={tech}
                   style={{
@@ -215,11 +215,11 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
         </motion.h2>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
           {[
-            { icon: Zap, number: '23', label: 'REST APIs' },
-            { icon: Code, number: '7', label: 'Docker Containers' },
-            { icon: Server, number: '6', label: 'Spring Boot Services' },
-            { icon: Code, number: '1', label: 'Python AI Service' },
-            { icon: Database, number: '11', label: 'Database Tables' },
+            { icon: Zap, number: '50+', label: 'REST API Endpoints' },
+            { icon: Code, number: '11', label: 'Docker Containers' },
+            { icon: Server, number: '8', label: 'Spring Boot Services' },
+            { icon: Code, number: '19', label: 'Frontend Pages' },
+            { icon: Database, number: '17', label: 'Database Tables' },
             { icon: Zap, number: '4', label: 'External APIs' },
             { icon: Lock, number: '1', label: 'API Gateway' },
             { icon: Zap, number: '100%', label: 'Dockerized' },
@@ -249,7 +249,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
             Students juggle multiple tools: LinkedIn for company tracking, HackerRank for coding prep, Naukri for job boards, Google Docs for resumes, and spreadsheets for roadmaps. This context switching wastes time and creates inconsistency.
           </p>
           <p style={{ fontSize: '1rem' }}>
-            CareerCoPilot consolidates everything into one production-grade platform where AI-generated career roadmaps, company tracking, resume building, interview prep, and progress tracking work together seamlessly.
+            CareerCoPilot consolidates everything into one platform where AI-generated career roadmaps, company tracking, resume building, interview prep, and progress tracking work together seamlessly.
           </p>
         </motion.div>
       </section>
@@ -261,13 +261,13 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
         </motion.h2>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ maxWidth: '800px', lineHeight: 1.8, color: 'var(--text2)', margin: '0 auto' }}>
           <p style={{ fontSize: '1rem', marginBottom: '1.5rem' }}>
-            <strong>CareerCoPilot</strong> is a production-grade full-stack application built with Java Spring Boot microservices, a React TypeScript frontend, and a dedicated Python FastAPI AI service.
+            <strong>CareerCoPilot</strong> is a full-stack application built with eight independent Java Spring Boot microservices behind a Spring Cloud Gateway, and a React + TypeScript single-page frontend.
           </p>
           <p style={{ fontSize: '1rem', marginBottom: '1.5rem' }}>
             This microservices architecture provides scalability, maintainability, and fault isolation. If the company search service fails, authentication and profiles continue working. New features deploy independently.
           </p>
           <p style={{ fontSize: '1rem' }}>
-            An API Gateway routes all traffic. PostgreSQL stores data with Flyway managing schema versions. This ensures reproducibility across environments.
+            The gateway routes all traffic and verifies every JWT before forwarding a trusted user identity downstream. PostgreSQL stores data with a Flyway migration history isolated per service, ensuring reproducibility across environments.
           </p>
         </motion.div>
       </section>
@@ -278,7 +278,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
           Core Features
         </motion.h2>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
-          {['JWT Authentication', 'Role Based Access', 'AI Career Roadmaps', 'Company Tracking', 'Resume Builder', 'Profile Management', 'Interview Preparation', 'Personal Dashboard', 'External Company Search', 'Roadmap Progress Tracking', 'Responsive UI', 'Docker Deployment'].map((feature, idx) => (
+          {['JWT Authentication', 'Admin Dashboard', 'AI Skill Assessment', 'AI Career Roadmaps', 'Company Tracking & Follows', 'Project Portfolio + GitHub Sync', 'AI Resume Builder (PDF)', 'Placement Calendar', 'Profile & Onboarding', 'Live Company/Job Search', 'Skills Gap Analysis', 'Dark / Light Mode', 'Docker Deployment'].map((feature, idx) => (
             <motion.div key={idx} variants={fadeIn} custom={idx} style={{ padding: '2rem', background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: '8px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <div style={{ width: '6px', height: '6px', background: 'var(--text)', borderRadius: '50%' }} />
@@ -295,29 +295,27 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
           System Architecture
         </motion.h2>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ padding: '2rem', background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: '8px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', lineHeight: 2, marginBottom: '2rem', color: 'var(--text2)', maxWidth: '800px', margin: '0 auto 2rem' }}>
-          <div>React Frontend</div>
+          <div>React Frontend (Vite)</div>
           <div style={{ marginLeft: '2rem' }}>↓</div>
-          <div style={{ marginLeft: '2rem' }}>Spring Cloud Gateway</div>
+          <div style={{ marginLeft: '2rem' }}>Spring Cloud Gateway (JWT verification)</div>
           <div style={{ marginLeft: '4rem' }}>↓</div>
           <div style={{ marginLeft: '4rem' }}>Auth • User • Company Services</div>
           <div style={{ marginLeft: '4rem' }}>↓</div>
-          <div style={{ marginLeft: '4rem' }}>Roadmap • Project Services</div>
-          <div style={{ marginLeft: '2rem' }}>↓</div>
-          <div style={{ marginLeft: '2rem' }}>RabbitMQ Message Broker</div>
+          <div style={{ marginLeft: '4rem' }}>Project • Roadmap • Resume • Calendar Services</div>
           <div style={{ marginLeft: '4rem' }}>↓</div>
-          <div style={{ marginLeft: '4rem' }}>Python FastAPI AI Service</div>
+          <div style={{ marginLeft: '4rem' }}>Google Gemini API (called directly from Roadmap, Resume & Project services)</div>
           <div style={{ marginLeft: '2rem' }}>↓</div>
-          <div style={{ marginLeft: '2rem' }}>PostgreSQL Databases</div>
+          <div style={{ marginLeft: '2rem' }}>PostgreSQL (per-service schema) + RabbitMQ (provisioned for async messaging)</div>
         </motion.div>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ maxWidth: '800px', lineHeight: 1.8, color: 'var(--text2)', fontSize: '0.95rem', margin: '0 auto' }}>
           <p style={{ marginBottom: '1.5rem' }}>
             <strong>Why Microservices?</strong> Each domain is independently deployable. If company search fails, auth and profiles continue. Same pattern as Netflix and Uber.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            <strong>Why API Gateway?</strong> Single entry point. Routes are environment-driven. CORS configured centrally.
+            <strong>Why API Gateway?</strong> Single entry point. Routes are environment-driven. CORS configured centrally. Every downstream service trusts only the gateway-injected <code>X-User-Id</code> header, never a user ID from the request body.
           </p>
           <p>
-            <strong>Why Database-per-Service?</strong> Loose coupling. Each service owns its schema. Flyway manages migrations independently.
+            <strong>Why Database-per-Service?</strong> Loose coupling. Each service owns its schema, with an isolated Flyway migration history table. All 8 services share one PostgreSQL instance today, but each schema evolves independently.
           </p>
         </motion.div>
       </section>
@@ -328,7 +326,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
           Engineering Highlights
         </motion.h2>
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
-          {['23 REST API Endpoints', '7 Docker Containers', '6 Spring Boot Services', '5 Flyway Migrations', '4 External APIs', '17 React Components', 'JWT Authentication', 'BCrypt Encryption', 'RabbitMQ Messaging'].map((highlight, idx) => (
+          {['50+ REST API Endpoints', '11 Docker Containers', '8 Spring Boot Services', '29 Flyway Migrations', '4 External APIs', '19 Frontend Pages', 'JWT Authentication', 'Gemini AI Integration (3 services)', 'Shared Internal Gateway Secret'].map((highlight, idx) => (
             <motion.div key={idx} variants={fadeIn} custom={idx} style={{ padding: '2rem', background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: '8px' }}>
               <Code size={24} style={{ marginBottom: '0.5rem', color: 'var(--text2)' }} />
               <div style={{ fontWeight: 500, fontSize: '0.95rem' }}>{highlight}</div>
@@ -344,10 +342,10 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
         </motion.h2>
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           {[
-            { title: 'Company Auto-Save', problem: 'Companies from JSearch API didn\'t exist in our database initially.', solution: 'Built automatic persistence layer before creating Follow relationship.', impact: 'Users experience seamless following.' },
-            { title: 'LinkedIn API Shutdown', problem: 'LinkedIn discontinued company search API during development.', solution: 'Migrated entire search system to JSearch in single session.', impact: 'Project remained production-ready.' },
-            { title: 'Docker Networking', problem: 'Gateway returned 401 due to localhost pointing to container itself.', solution: 'Used Docker internal DNS service names.', impact: 'Stable microservice communication.' },
-            { title: 'Gemini JSON Cleaning', problem: 'Gemini wrapped JSON in markdown code blocks.', solution: 'Created automatic JSON cleaning before parsing.', impact: 'Reliable AI response handling.' },
+            { title: 'Company Auto-Save', problem: 'Companies from the JSearch API didn\'t exist in our database initially.', solution: 'Built an automatic persistence layer that upserts a company before creating its Follow relationship.', impact: 'Users experience seamless following.' },
+            { title: 'LinkedIn API Shutdown', problem: 'LinkedIn discontinued its company search API during development.', solution: 'Migrated the entire company/job search system to the JSearch API on RapidAPI.', impact: 'Live company search remained available.' },
+            { title: 'Docker Networking', problem: 'The gateway returned 401s because services pointed at localhost instead of each other.', solution: 'Switched every service-to-service URL to Docker Compose\'s internal DNS service names.', impact: 'Stable microservice communication.' },
+            { title: 'Gemini JSON Cleaning', problem: 'Gemini wrapped its JSON responses in markdown code fences.', solution: 'Added an automatic JSON-cleaning step before parsing responses from Gemini.', impact: 'Reliable AI response handling across roadmap, assessment and resume generation.' },
           ].map((challenge, idx) => (
             <motion.div key={idx} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} style={{ borderLeft: '2px solid var(--border)', paddingLeft: '1.5rem', marginBottom: '2.5rem' }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1rem' }}>{challenge.title}</h3>
@@ -385,7 +383,7 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
           </button>
         </motion.div>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ paddingTop: '2rem', borderTop: '1px solid var(--border)', color: 'var(--text3)', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-          Built with Java • Spring Boot • React • PostgreSQL • Docker • RabbitMQ • FastAPI • Gemini AI
+          Built with Java • Spring Boot • React • PostgreSQL • Docker • RabbitMQ • Gemini AI
         </motion.div>
       </section>
     </div>

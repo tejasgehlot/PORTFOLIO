@@ -95,9 +95,9 @@ const PROCESS = [
 ]
 
 const PROOF_STATS = [
-  { num: '75+', label: 'REST API endpoints shipped' },
+  { num: '102+', label: 'REST API endpoints shipped' },
   { num: '3', label: 'Production-grade systems' },
-  { num: '16', label: 'Backend services designed' },
+  { num: '18', label: 'Backend services designed' },
   { num: '8.3', label: 'CGPA \u00b7 B.Tech AI & DS' },
 ]
 
@@ -284,15 +284,15 @@ function App() {
                   <div className="work-tag">CareerCoPilot &middot; AI Career Platform</div>
                   <h3 className="work-title">A microservices platform for placement prep</h3>
                   <p className="work-desc">
-                    Six Spring Boot services behind an API gateway, a Python FastAPI service handling AI-generated career roadmaps, and a React frontend tying it together &mdash; built so one failing service never takes down the rest.
+                    Eight Spring Boot services behind an API gateway, AI-generated skill assessments and career roadmaps powered directly by Gemini, and a React frontend tying it together — built so one failing service never takes down the rest.
                   </p>
                   <div className="work-stats">
-                    <div><div className="work-stat-num">23</div><div className="work-stat-label">REST APIs</div></div>
-                    <div><div className="work-stat-num">6</div><div className="work-stat-label">Spring services</div></div>
-                    <div><div className="work-stat-num">7</div><div className="work-stat-label">Docker containers</div></div>
+                    <div><div className="work-stat-num">50+</div><div className="work-stat-label">REST APIs</div></div>
+                    <div><div className="work-stat-num">8</div><div className="work-stat-label">Spring services</div></div>
+                    <div><div className="work-stat-num">11</div><div className="work-stat-label">Docker containers</div></div>
                   </div>
                   <div className="work-tech">
-                    {['Java', 'Spring Boot', 'React', 'TypeScript', 'PostgreSQL', 'Docker', 'Gemini AI'].map((t) => <span className="tag" key={t}>{t}</span>)}
+                    {['Java', 'Spring Boot', 'Spring Cloud Gateway', 'React', 'TypeScript', 'PostgreSQL', 'Docker', 'RabbitMQ', 'Gemini AI'].map((t) => <span className="tag" key={t}>{t}</span>)}
                   </div>
                   <div className="work-actions">
                     <button className="work-link primary" onClick={() => navigate('careercopstudy')}>Read the case study</button>
