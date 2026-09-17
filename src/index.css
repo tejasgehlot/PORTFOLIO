@@ -121,6 +121,8 @@ ul { list-style: none; }
   box-shadow: inset 0 0 60px rgba(0,0,0,0.5);
 }
 .duotone:hover img { filter: grayscale(0.35) contrast(1.1) brightness(0.98); transform: scale(1.035); }
+.duotone img.obj-top { object-position: center 20%; }
+.duotone img.obj-smile { object-position: center 30%; }
 
 /* =========================================================
    CUSTOM CURSOR
@@ -506,7 +508,13 @@ ul { list-style: none; }
   min-height: 320px;
   overflow: hidden;
 }
-.work-card-media img { width: 100%; height: 100%; object-fit: cover; }
+.work-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1.5rem;
+  background: var(--void-raised);
+}
 .work-card-tag {
   position: absolute; top: 1.3rem; left: 1.3rem;
   font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em;
@@ -618,9 +626,9 @@ ul { list-style: none; }
   .about-collage { order: -1; height: 62vw; margin-bottom: 1rem; }
 }
 
-.about-filmstrip { display: flex; gap: 0.7rem; margin-top: 2.4rem; }
-.about-filmstrip .duotone { width: 84px; height: 84px; border-radius: 10px; border: 1px solid var(--stroke-strong); flex-shrink: 0; }
-@media (max-width: 480px) { .about-filmstrip .duotone { width: 64px; height: 64px; } }
+.about-wide-photo { margin-top: clamp(2.5rem, 6vw, 4rem); }
+.about-wide-photo .duotone { width: 100%; aspect-ratio: 3.2 / 1; border-radius: 16px; border: 1px solid var(--stroke-strong); }
+@media (max-width: 640px) { .about-wide-photo .duotone { aspect-ratio: 2 / 1; } }
 
 .hero-avatar { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; }
 

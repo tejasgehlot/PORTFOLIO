@@ -16,13 +16,11 @@ import invoiceFlowImage from '../InvoiceFlow image.png'
 import VOXA from '../VOXA.png'
 
 import heroEditorial from './assets/photos/hero-editorial.jpeg'
-import formalHeadshot from './assets/photos/formal-headshot.jpeg'
+// import formalHeadshot from './assets/photos/formal-headshot.jpeg'
 import campusFront from './assets/photos/campus-front.jpeg'
 import galleryWallA from './assets/photos/gallery-wall-a.jpeg'
 import candidSmile from './assets/photos/candid-smile.jpeg'
-import campusShades from './assets/photos/campus-shades.jpeg'
-import galleryWallB from './assets/photos/gallery-wall-b.jpeg'
-import classroomCandid from './assets/photos/classroom-candid.jpeg'
+import campusBench from './assets/photos/campus-bench.jpeg'
 
 const ROUTES = {
   portfolio: '/',
@@ -362,7 +360,7 @@ function App() {
           <section className="hero">
             <div className="hero-copy">
               <div className="hero-eyebrow">
-                <img src={formalHeadshot} alt="" className="hero-avatar duotone" />
+                {/* <img src={formalHeadshot} alt="" className="hero-avatar duotone" /> */}
                 Available for freelance work · Vadodara, India
               </div>
               <h1 className={`hero-title${heroReady ? ' is-ready' : ''}`}>
@@ -505,18 +503,19 @@ function App() {
                   <div><dt>Languages</dt><dd>English, Hindi, Gujarati</dd></div>
                   <div><dt>Based in</dt><dd>Vadodara, Gujarat, India</dd></div>
                 </dl>
-
-                <div className="about-filmstrip">
-                  <div className="duotone"><img src={campusShades} alt="" /></div>
-                  <div className="duotone"><img src={galleryWallB} alt="" /></div>
-                  <div className="duotone"><img src={classroomCandid} alt="" /></div>
-                </div>
+ 
               </div>
 
               <div className="about-collage">
-                <figure className="duotone"><img src={campusFront} alt="Tejas Gehlot on campus" /></figure>
-                <figure className="duotone"><img src={candidSmile} alt="Tejas Gehlot" /></figure>
+                <figure className="duotone"><img src={campusFront} alt="Tejas Gehlot on campus" className="obj-top" /></figure>
+                <figure className="duotone"><img src={candidSmile} alt="Tejas Gehlot" className="obj-smile"/></figure>
                 <figure className="duotone"><img src={galleryWallA} alt="Tejas Gehlot portrait" /></figure>
+              </div>
+                        </div>
+
+            <div className="section-inner about-wide-photo">
+              <div className="duotone">
+                <img src={campusBench} alt="Tejas Gehlot reading on campus" />
               </div>
             </div>
 
