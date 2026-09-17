@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
+import ScreensGallery from './components/ScreensGallery'
 import {
-  ArrowRight,
+  ArrowLeft,
   Camera,
   CloudCog,
   Code,
@@ -256,11 +257,12 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
           padding: '1.2rem 3rem',
         }}
       >
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-          TG
+        <div style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: '1rem', fontWeight: 700 }}>
+          T<span style={{ color: 'var(--accent)' }}>G</span>
         </div>
         <button
           onClick={() => onNavigate('portfolio')}
+          data-cursor="link"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -268,15 +270,16 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: '0.75rem',
             letterSpacing: '0.1em',
-            textTransform: 'uppercase',
             color: 'var(--text2)',
             background: 'transparent',
-            border: 'none',
+            border: '1px solid var(--border)',
+            borderRadius: '999px',
+            padding: '0.55rem 1.1rem',
             cursor: 'pointer',
           }}
         >
-          <ArrowRight size={16} />
-          Back
+          <ArrowLeft size={15} />
+          Back to portfolio
         </button>
       </nav>
 
@@ -332,6 +335,18 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
             />
           </motion.div>
         </motion.div>
+      </section>
+
+      <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.1rem', fontWeight: 700, marginBottom: '2.5rem', maxWidth: '1120px', marginLeft: 'auto', marginRight: 'auto' }}>
+          Product Screens
+        </motion.h2>
+        <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
+          <ScreensGallery labels={['Citizen complaint feed', 'Photo capture + AI triage', 'Officer dashboard', 'Complaint detail & audit trail', 'Ward-level analytics', 'Admin department routing']} />
+          <p style={{ marginTop: '1.2rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--text3)' }}>
+            Placeholder frames — real product screenshots go here.
+          </p>
+        </div>
       </section>
 
       <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>

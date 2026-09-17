@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Code, Database, Lock, Server, Zap } from 'lucide-react'
+import { ArrowLeft, Code, Database, Lock, Server, Zap } from 'lucide-react'
+import ScreensGallery from './components/ScreensGallery'
 import careerCopilotImage from '../career copilot image.png';
 import invoiceFlowImage from '../InvoiceFlow image.png';
 import VOXA from '../VOXA.png';
@@ -62,11 +63,12 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
           padding: '1.2rem 3rem',
         }}
       >
-        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-          TG
+        <div style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontSize: '1rem', fontWeight: 700 }}>
+          T<span style={{ color: 'var(--accent)' }}>G</span>
         </div>
         <button
           onClick={() => onNavigate('portfolio')}
+          data-cursor="link"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -74,18 +76,19 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
             fontFamily: "'JetBrains Mono', monospace",
             fontSize: '0.75rem',
             letterSpacing: '0.1em',
-            textTransform: 'uppercase',
             color: 'var(--text2)',
             background: 'transparent',
-            border: 'none',
+            border: '1px solid var(--border)',
+            borderRadius: '999px',
+            padding: '0.55rem 1.1rem',
             cursor: 'pointer',
             transition: 'color 0.2s',
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text)')}
           onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text2)')}
         >
-          <ArrowRight size={16} />
-          Back
+          <ArrowLeft size={15} />
+          Back to portfolio
         </button>
       </nav>
 
@@ -206,6 +209,19 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
 </motion.div>
 
         </motion.div>
+      </section>
+
+      {/* PRODUCT SCREENS */}
+      <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.1rem', fontWeight: 700, marginBottom: '2.5rem', maxWidth: '1200px', marginLeft: 'auto', marginRight: 'auto' }}>
+          Product Screens
+        </motion.h2>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <ScreensGallery labels={['Skill assessment flow', 'AI-generated roadmap', 'Company tracker', 'Auto-built resume', 'Gateway service map', 'Student dashboard']} />
+          <p style={{ marginTop: '1.2rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--text3)' }}>
+            Placeholder frames — real product screenshots go here.
+          </p>
+        </div>
       </section>
 
       {/* ENGINEERING SNAPSHOT */}
