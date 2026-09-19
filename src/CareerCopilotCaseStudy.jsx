@@ -1,9 +1,13 @@
 import { motion } from 'framer-motion'
 import { ArrowLeft, Code, Database, Lock, Server, Zap } from 'lucide-react'
 import ScreensGallery from './components/ScreensGallery'
-import careerCopilotImage from '../career copilot image.png';
-import invoiceFlowImage from '../InvoiceFlow image.png';
-import VOXA from '../VOXA.png';
+import careerCopilotImage from '../career copilot image.png'
+import dashboard from './assets/photos/CC1dashboard.png'; 
+import roadmap from './assets/photos/CC2roadmap-page.png'
+import projects   from './assets/photos/CC3projects-page.png'
+import resume from './assets/photos/CC4resume-page.png'
+import synch  from './assets/photos/CC5git-sync.png'
+import calendar from './assets/photos/CC6calendar.png' 
 
 // Custom standalone Github component designed to match Lucide's 24x24 layout grid
 const Github = ({ size = 24, className = "" }) => (
@@ -217,10 +221,10 @@ const CareerCopilotCaseStudy = ({ onNavigate = () => {} }) => {
           Product Screens
         </motion.h2>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <ScreensGallery labels={['Skill assessment flow', 'AI-generated roadmap', 'Company tracker', 'Auto-built resume', 'Gateway service map', 'Student dashboard']} />
-          <p style={{ marginTop: '1.2rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--text3)' }}>
-            Placeholder frames — real product screenshots go here.
-          </p>
+          <ScreensGallery 
+          labels={['Skill assessment flow', 'AI-generated roadmap', 'Company tracker', 'Auto-built resume', 'Gateway service map', 'Student dashboard']} 
+          images={[dashboard, roadmap, projects, resume, synch, calendar]} 
+          />
         </div>
       </section>
 

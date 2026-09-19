@@ -18,9 +18,14 @@ import {
 } from 'lucide-react'
 
 
-import careerCopilotImage from '../career copilot image.png';
-import invoiceFlowImage from '../InvoiceFlow image.png';
+ 
 import VOXA from '../VOXA.png';
+import map from './assets/photos/VX1live-map.png'; 
+import report from './assets/photos/VX2report-problem.png'
+import track  from './assets/photos/VX3complaint-track.png'
+import viewOFFICER from './assets/photos/VX4ward-officer-view.png'
+import viewDEPTHEAD  from './assets/photos/VX5department-head-view.png'
+import viewADMIN from './assets/photos/VX6admin-view.png'
 
 const Github = ({ size = 24, className = '' }) => (
   <svg
@@ -342,10 +347,11 @@ const VoxaCaseStudy = ({ onNavigate = () => {} }) => {
           Product Screens
         </motion.h2>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
-          <ScreensGallery labels={['Citizen complaint feed', 'Photo capture + AI triage', 'Officer dashboard', 'Complaint detail & audit trail', 'Ward-level analytics', 'Admin department routing']} />
-          <p style={{ marginTop: '1.2rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--text3)' }}>
-            Placeholder frames — real product screenshots go here.
-          </p>
+          <ScreensGallery 
+          labels={['Citizen complaint feed', 'Photo capture + AI triage', 'Officer dashboard', 'Complaint detail & audit trail', 'Ward-level analytics', 'Admin department routing']} 
+          images={[map, report, track, viewOFFICER, viewDEPTHEAD, viewADMIN]}
+          />
+           
         </div>
       </section>
 

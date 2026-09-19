@@ -15,9 +15,14 @@ import {
 } from 'lucide-react'
 
 
-import careerCopilotImage from '../career copilot image.png';
+
 import invoiceFlowImage from '../InvoiceFlow image.png';
-import VOXA from '../VOXA.png';
+import dashboard from './assets/photos/INV1dashboard.png'; 
+import creatINV from './assets/photos/INV2create-inovice.png'
+import sampleINV   from './assets/photos/INV3invoicePDF-sample.png'
+import viewINV from './assets/photos/INV4invoice-view.png'
+import staff  from './assets/photos/INV5staff.png'
+import statusINV from './assets/photos/INV6invoice-status.png'
 
 const Github = ({ size = 24, className = '' }) => (
   <svg
@@ -236,8 +241,11 @@ const InvoiceFlowCaseStudy = ({ onNavigate = () => {} }) => {
       <section style={{ padding: '5rem 3rem', borderBottom: '1px solid var(--border)' }}>
         <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} style={{ fontSize: '2.1rem', fontWeight: 700, marginBottom: '2.5rem', maxWidth: '1120px', marginLeft: 'auto', marginRight: 'auto' }}>Product Screens</motion.h2>
         <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
-          <ScreensGallery labels={['Client & invoice dashboard', 'Invoice builder', 'Server-rendered PDF output', 'Staff role management', 'Billing analytics', 'Multi-tenant admin view']} />
-          <p style={{ marginTop: '1.2rem', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', letterSpacing: '0.08em', color: 'var(--text3)' }}>Placeholder frames — real product screenshots go here.</p>
+          <ScreensGallery 
+          labels={['Client & invoice dashboard', 'Invoice builder', 'Server-rendered PDF output', 'Staff role management', 'Billing analytics', 'Multi-tenant admin view']} 
+          images={[dashboard, creatINV, sampleINV, viewINV, staff, statusINV]}
+          />
+          
         </div>
       </section>
 

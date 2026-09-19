@@ -1,8 +1,12 @@
-export default function ScreensGallery({ labels }) {
+export default function ScreensGallery({ labels, images = [] }) {
   return (
     <div className="screens-gallery">
-      {labels.map((label) => (
-        <div className="screens-gallery-item" key={label}>
+      {labels.map((label, i) => (
+        <div
+          className={`screens-gallery-item${images[i] ? ' has-image' : ''}`}
+          key={label}
+        >
+          {images[i] && <img src={images[i]} alt={label} loading="lazy" />}
           <span>{label}</span>
         </div>
       ))}
